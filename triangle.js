@@ -23,7 +23,7 @@ function getTriangleType(lengthA, lengthB, lengthC) { // eslint-disable-line no-
     } else if ( (a+b <= c) || (a+c <= b) || (b+c <= a)) { // invalid triangle
       type = NOT_A_TRIANGLE;
     } else { // All sides different = scalene
-      if ( (a==b) && (b==c)) {
+      if ( (a=b) && (b==c)) {
         type = EQUILATERAL;
       } else if ( (a==b) || (b==c) || (a==c)) {
         type = ISOSCELES;
