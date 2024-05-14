@@ -1,0 +1,60 @@
+<html>
+  <head>
+  <script src="https://www.googleoptimize.com/optimize.js?id=OPT-5G9DTPZ"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9488RR3R5G"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9488RR3R5G');
+  </script>
+  <script src="triangle.js"></script> 
+  <script>
+    /*
+     * Gets the lenghts of the sides of the triangle from the HTML elements
+     * calculates the type of triangle and shows the type on the page
+     */
+    function chekTriangleType() {
+      // Get the lengths of the sides from the UI
+      let a = document.getElementById("input-a").value;
+      let b = document.getElementById("input-b").value;
+      let c = document.getElementById("input-c").value;
+
+      // Calculate the type of Triangle
+      triangleType = getTriangleType(a, b, c);
+      // Shows the type of Triangle in the web site
+      displayTriangleType(triangleType);
+      
+      gtag('event', 'triangle_type_calculated', {
+        'triangleType': triangleType
+      });
+    }
+
+    /*
+     * Updates the HTML element result with the passed argument 
+     * (used for the triangle type)
+     */
+    function displayTriangleType(type) {
+      document.getElementById("result").innerHTML = '<b>Result</b> ' + type;
+    }
+
+    </script>
+    </head>
+    <body>
+        <h1> Calculate Triangle Type </h1>
+        <p>
+        Length of Side A <input name="input-a" id="input-a" value="1"> </input>
+        </p>
+        <p>
+        Length of Side B <input name="input-b" id="input-b" value="1"> </input>
+        </p>
+        <p>
+        Length of Side C <input name="input-c" id="input-c" value="1"> </input>
+        </p>
+        <p>
+        <button name='button-calculate' onclick='javascript:chekTriangleType()'> Calculate </button>
+        </p>
+        <div id="result">  </div>
+    </body>
+</html>
